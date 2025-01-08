@@ -1,0 +1,37 @@
+
+<div style="/* margin: 1rem; */
+padding: 1rem;
+background-color: rgb(142, 140, 216);">
+
+    <mat-card style="
+    font-size: 2rem;
+    background-color: rgb(217, 200, 223);margin-bottom: 1rem;"  elevated-container-color="blue" appearance="outlined">
+        <mat-card-content style="color: rgb(120, 26, 162);font-size: 2rem;">{{ELEMENT_DATA[0].name}}'s car out</mat-card-content>
+        <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
+    </mat-card>
+    <!-- <p>main-table works!</p> -->
+    <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Weight </th>
+          <td mat-cell *matCellDef="let element">  {{ element.date | date: 'MM/dd, EEEE ' }} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+  
+        <tr style="display: none;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" [ngStyle]="{'background-color': row.color}"></tr>
+    </table>
+</div>
