@@ -6,8 +6,22 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <!-- <p>Auto-resizing sidenav</p> -->
+    <app-park-space></app-park-space>
+    @if (showFiller) {
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    }
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+  
+  <app-nav-bar (toggleBurger)="toggleBurger(drawer)" ></app-nav-bar>
+  
+  <router-outlet />
 
-<app-nav-bar></app-nav-bar>
-<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
 
-<router-outlet />
+</mat-drawer-container>
+

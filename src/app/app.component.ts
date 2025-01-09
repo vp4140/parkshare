@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'parkshare';
+  @ViewChild('drawer') drawer: ElementRef | undefined;
+  showFiller = false;
+  toggleBurger(drawer:any){
+    drawer.toggle();  
+  }
 }

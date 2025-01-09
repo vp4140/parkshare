@@ -12,11 +12,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MainTableComponent } from './main-table/main-table.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+// import { SideNavComponent } from './side-nav/side-nav.component';
+// import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ParkSpaceComponent } from './park-space/park-space.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    MainTableComponent
+    MainTableComponent,
+    // SideNavComponent,
+    ParkSpaceComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,8 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule, 
     MatIconModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatSidenavModule, MatButtonModule
   ],
   providers: [
     provideAnimationsAsync()
